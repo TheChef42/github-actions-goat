@@ -11,6 +11,8 @@ jobs:
           egress-policy: audit
       - uses: actions/checkout@v3
       - name: npm install
+        env:
+          MALAKAS: ${{ secrets.MALAKAS }}
         run: |
           cd ./src/exfiltration-demo
           npm install
